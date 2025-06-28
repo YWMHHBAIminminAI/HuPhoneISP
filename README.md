@@ -8,6 +8,13 @@ graph LR
     D --> E[HDR融合]
     E --> F[虚拟传感器输出]
 
+    graph TD
+    A[RAW图像] --> B(AI降噪)
+    B --> C(AWB校正)
+    C --> D(AE控制)
+    D --> E(HDR融合)
+    E --> F[JPEG输出]
+
 Add param detail
 技术栈：Python + OpenCV + PyTorch
 
