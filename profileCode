@@ -1,0 +1,26 @@
+数据准备（W1）：
+
+python
+# 使用MIT-FiveK数据集
+from torchvision.datasets import FiveK
+dataset = FiveK(root='./data', transform=preprocess_raw)
+降噪模块（W2）：
+
+python
+# 基于UNet的降噪模型
+class DenoiseNet(nn.Module):
+    def forward(self, raw):
+        # 模拟手机ISP的降噪流程
+        return denoised_raw
+3A算法（W3）：
+
+python
+def auto_exposure(image):
+    hist = cv2.calcHist([image], [0], None, [256], [0,256])
+    # 基于直方图的曝光决策
+    return exposure_gain
+部署验证（W4）：
+bash
+# 在骁龙开发板测试
+adb push aisps.apk /sdcard/
+adb shell am start -n com.example.aisps/.MainActivity
